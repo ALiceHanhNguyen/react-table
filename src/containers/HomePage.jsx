@@ -30,7 +30,8 @@ class HomePage extends React.Component {
 	    },
 	    {
 	      Header: "Created at",
-        accessor: "created_at"
+        accessor: "created_at",
+        filterable: false,
 	    },
 	    {
 	      Header: "Updated at",
@@ -74,8 +75,9 @@ class HomePage extends React.Component {
           makeData={ this.makeData }
           makeColumns={ this.makeColumns }
           activePage={ activePage }
-          itemPerPage={ 2 }
+          totalData={ 200 }
           handlePageChange={ this.handlePageChange }
+          isPagination={ true }
 				/>
 			</div>
 		);

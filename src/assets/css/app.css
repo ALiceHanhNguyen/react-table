@@ -21,3 +21,11 @@
 .page-link {
   color: #003b65;
 }
+
+.-odd {
+  background-color: #eff4fe !important;
+}
+
+.rt-tr:hover {
+  background-color: #d5dcea !important;
+}

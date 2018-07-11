@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactTable from "react-table";
-import PaginationSimple from "./PaginationSimple";
+import Pagination from "react-js-pagination";
+// import PaginationSimple from "./PaginationSimple";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-table/react-table.css";
 import "./../../assets/css/app.css";
 
@@ -9,8 +11,9 @@ const TableSimple = (props) => {
 		makeData,
 		makeColumns,
     activePage,
-    itemPerPage,
+    totalData,
     handlePageChange,
+    isPagination,
 	} = props;
 	return (
 		<div>
@@ -24,12 +27,16 @@ const TableSimple = (props) => {
           String(row[filter.id]) === filter.value }
 			/>
       <br />
-      <PaginationSimple
+      { isPagination && <Pagination
         activePage={ activePage }
-        itemPerPage={ itemPerPage }
-        totalData={ makeData.length }
-        handlePageChange={ handlePageChange }
-      />
+        itemsCountPerPage={ makeData.length }
+        totalItemsCount={ totalData }
+        pageRangeDisplayed={ 5 }
+        onChange={ handlePageChange }
+        linkClass="page-link"
+        itemClass="page-item"
+        innerClass="pagination justify-content-center"
+      /> }
 		</div>
 	);
 };
