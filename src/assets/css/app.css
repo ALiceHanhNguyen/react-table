@@ -3,6 +3,15 @@
   color: white;
   font-weight: 600;
 }
+.ReactTable > .rt-table > .rt-tbody .rt-td {
+  padding: 0px !important;
+}
+.rt-resizable-header-content {
+  padding: 5px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .rt-th, .rt-td {
   border-left: 1px solid rgba(0,0,0,0.02);
   border-top: 1px solid rgba(0,0,0,0.02);
@@ -28,4 +37,14 @@
 
 .rt-tr-group > .rt-tr:hover {
   background-color: #d5dcea !important;
+}
+.style-col {
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pd-7-5 {
+  padding: 7px 5px;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import TableSimple from './components/TableSimple';
-
+import "./../assets/css/app.css";
 
 class HomePage extends React.Component {
   constructor() {
@@ -15,10 +15,12 @@ class HomePage extends React.Component {
       {
         Header: "ID",
         accessor: "id",
+        Cell: row => ( <div className="pd-7-5" >{ row.value }</div> ),
       },
 	    {
         Header: "Email",
         accessor: "email",
+        Cell: row => ( <div className="pd-7-5" >{ row.value }</div> ),
         filterMethod: (filter, row) =>
                   row[filter.id].startsWith(filter.value),
         sortMethod: (a, b) => {
@@ -32,14 +34,21 @@ class HomePage extends React.Component {
 	      Header: "Created at",
         accessor: "created_at",
         filterable: false,
+        Cell: row => ( <div className="pd-7-5" >{ row.value }</div> ),
 	    },
 	    {
 	      Header: "Updated at",
-        accessor: "updated_at"
+        accessor: "updated_at",
+        Cell: row => ( <div className="pd-7-5" >{ row.value }</div> ),
 	    },
 	    {
 	      Header: "ID Sale",
         accessor: "sale_id",
+	    Cell: row => (
+            <div className="style-col" style={{ backgroundColor: row.value > 10 ? '#85cc00' : row.value > 5 ? '#ffbf00' : '#ff2e00' }}>
+            	{ row.value }
+            </div>
+        ),
         filterMethod: (filter, row) => {
           if (filter.value === "all") {
             return true;
