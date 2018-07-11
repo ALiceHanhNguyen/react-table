@@ -18,6 +18,7 @@ const TableSimple = (props) => {
 	return (
 		<div>
 			<ReactTable
+			noDataText="No result found"
         filterable
 				data={ makeData }
 				columns={ makeColumns }
