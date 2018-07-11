@@ -1,0 +1,23 @@
+.ReactTable > .rt-table > .rt-thead {
+  background-color: #003b65;
+  color: white;
+  font-weight: 600;
+}
+.rt-th, .rt-td {
+  border-left: 1px solid rgba(0,0,0,0.02);
+  border-top: 1px solid rgba(0,0,0,0.02);
+  border-color: white;
+}
+.rt-th > input {
+  border-radius: 0px !important;
+}
+.-filters {
+  border-bottom: 0px !important;
+}
+.page-item.active .page-link {
+  background-color: #003b65;
+  border-color: #003b65;
+}
+.page-link {
+  color: #003b65;
+}
