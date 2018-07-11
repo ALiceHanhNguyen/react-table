@@ -22,10 +22,10 @@
   color: #003b65;
 }
 
-.-odd {
+.rt-tr-group > .-odd {
   background-color: #eff4fe !important;
 }
 
-.rt-tr:hover {
+.rt-tr-group > .rt-tr:hover {
   background-color: #d5dcea !important;
 }
