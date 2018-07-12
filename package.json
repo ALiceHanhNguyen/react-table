@@ -41,6 +41,7 @@
     "mini-css-extract-plugin": "^0.4.0",
     "namor": "^1.0.1",
     "node-sass": "^4.9.0",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-js-pagination": "^3.0.2",
