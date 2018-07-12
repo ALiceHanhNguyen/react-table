@@ -16,8 +16,10 @@ class HomePage extends React.Component {
         Header: "ID",
         accessor: "id",
         Cell: row => ( <div className="pd-7-5" >{ row.value }</div> ),
+        filterMethod: (filter, row) =>
+                  String(row[filter.id]).startsWith(filter.value),
       },
-	    {
+      {
         Header: "Email",
         accessor: "email",
         Cell: row => ( <div className="pd-7-5" >{ row.value }</div> ),
@@ -40,14 +42,16 @@ class HomePage extends React.Component {
 	      Header: "Updated at",
         accessor: "updated_at",
         Cell: row => ( <div className="pd-7-5" >{ row.value }</div> ),
+        filterMethod: (filter, row) =>
+                  String(row[filter.id]).startsWith(filter.value),
 	    },
 	    {
 	      Header: "ID Sale",
         accessor: "sale_id",
-	    Cell: row => (
-            <div className="style-col" style={{ backgroundColor: row.value > 10 ? '#85cc00' : row.value > 5 ? '#ffbf00' : '#ff2e00' }}>
-            	{ row.value }
-            </div>
+	      Cell: row => (
+          <div className="style-col" style={{ backgroundColor: row.value > 10 ? '#85cc00' : row.value > 5 ? '#ffbf00' : '#ff2e00' }}>
+            { row.value }
+          </div>
         ),
         filterMethod: (filter, row) => {
           if (filter.value === "all") {
@@ -68,15 +72,15 @@ class HomePage extends React.Component {
             <option value="true">More 10</option>
             <option value="false">Less 10</option>
           </select>
-	    },
+      },
     ];
-	}
+  }
 
   handlePageChange(pageNumber) {
     this.setState({activePage: pageNumber});
   }
 
-	render() {
+  render() {
     const { activePage } = this.state;
     return (
       <div>
@@ -87,10 +91,10 @@ class HomePage extends React.Component {
           totalData={ 200 }
           handlePageChange={ this.handlePageChange }
           isPagination={ true }
-				/>
-			</div>
-		);
-	};
+        />
+      </div>
+    );
+  };
 }
 
 export default HomePage;
