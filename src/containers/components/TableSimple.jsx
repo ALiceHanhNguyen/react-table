@@ -43,7 +43,7 @@ const TableSimple = (props) => {
 };
 
 TableSimple.propTypes = {
-  makeData: PropTypes.object,
+  makeData: PropTypes.array,
   makeColumns: PropTypes.array,
   activePage: PropTypes.number,
   totalData: PropTypes.number,

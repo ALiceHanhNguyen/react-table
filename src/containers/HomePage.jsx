@@ -1,6 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
+import { Button } from 'react-bootstrap';
 import TableSimple from './components/TableSimple';
+import './../../node_modules/font-awesome/css/font-awesome.min.css';
 import "./../assets/css/app.css";
 
 class HomePage extends React.Component {
@@ -36,7 +38,16 @@ class HomePage extends React.Component {
 	      Header: "Created at",
         accessor: "created_at",
         filterable: false,
-        Cell: row => ( <div className="pd-7-5" >{ row.value }</div> ),
+        Cell: row => (
+          <div className="pd-7-5" >
+            <span>{ row.value }</span>
+            <Button bsStyle='success' className="float-right mr-5-7" onClick={ () => console.log('***111****') }>
+              <i className="fa fa-spinner fa-spin" />
+            </Button>
+            <Button bsStyle='danger' className="float-right mr-5-7" onClick={ () => console.log('*******') }>
+              <i className="fa fa-spinner fa-spin" />
+            </Button>
+          </div> ),
 	    },
 	    {
 	      Header: "Updated at",
