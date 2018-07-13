@@ -43,10 +43,12 @@ body {
 }
 .style-col {
   height: 100%;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.color-white {
+  color: white;
 }
 .pd-7-5 {
   padding: 7px 5px;
@@ -56,4 +58,16 @@ body {
 }
 .mr-5-7 {
   margin: 5px 7px;
+}
+
+div .Select-menu-outer {
+  position: relative;
+  max-height: 100px;
+}
+
+.date {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
