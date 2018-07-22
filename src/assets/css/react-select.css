@@ -1,0 +1,27 @@
+.Select-control {
+    border-radius: 0px;
+	border: 2px solid #ccc;
+}
+.Select--multi .Select-value {
+	border: none;
+    background: inherit;
+}
+.Select--multi .Select-value-icon,
+.Select--multi .Select-value-label,
+.Select--multi .Select-value-icon:hover,
+.Select--multi .Select-value-label:hover {
+	background: #2e61b3;
+    color: white;
+    padding: 3px 5px;
+}
+.Select--multi .Select-value-label,
+.Select--multi .Select-value-label:hover {
+	border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.Select--multi .Select-value-icon,
+.Select--multi .Select-value-icon:hover {
+	border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border: none;
+}
