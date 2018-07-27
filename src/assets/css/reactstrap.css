@@ -1,0 +1,153 @@
+thead {
+	background-color: #f0f2f2;
+    text-transform: uppercase;
+    width: 76px;
+  	height: 23px;
+  	font-size: 14px;
+  	font-weight: 600;
+  	line-height: 1.2;
+  	text-align: center;
+  	color: #333333;
+}
+thead tr:first-of-type {
+	height: 50px;
+}
+thead tr:last-of-type {
+	height: 40px;
+}
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > td {
+	border-bottom-width: 1px;
+	border-color: #cccccc;
+}
+.table > thead > tr > th:first-of-type,
+.table > thead > tr > th:last-of-type,
+.table > thead > tr > th {
+    vertical-align: middle;
+}
+.table > thead > tr > th:first-of-type {
+	min-width: 199px;
+}
+.table > thead > tr > th:last-of-type {
+	min-width: 147px;
+}
+.table > thead > tr:last-of-type > th {
+	min-width: 160px;
+}
+
+/*************************Note********************************************/
+
+/*remove class='text-center'
+add tag <br /> in title weighted code*/
+
+/********************End thead of Table***********************************/
+tbody {
+	text-align: center;
+}
+.table > tbody > tr > td:first-of-type,
+.table > tbody > tr > td:last-of-type {
+	vertical-align: middle;
+}
+.label-category {
+  	font-size: 14px;
+  	font-weight: 600;
+  	line-height: 1.2;
+  	color: #333333;
+}
+.percent-category {
+  	height: 33px;
+  	font-size: 20px;
+  	font-weight: 600;
+  	line-height: 1.5;
+  	padding:2px;
+  	color: #333333;
+}
+.red {
+  	color: #f40c0c;
+}
+.select-item {
+	background-color: #eef5ff;
+}
+.comment {
+	background-color: #f0f2f2;
+	min-width: 796px;
+  	height: 60px;
+  	text-align: left;
+}
+.comment label {
+	width: 62px;
+	box-sizing: border-box;
+  	font-size: 14px;
+  	font-weight: 500;
+  	line-height: 0.57;
+  	color: #333333;
+  	vertical-align: middle;
+  	margin: 0px 10px 0px 2px;
+}
+.comment input {
+	display: inline-block;
+	font-size: 14px;
+	width: calc(100% - 76px);
+	box-sizing: border-box;
+	min-width: 693px;
+  	height: 40px;
+  	border-radius: 2px;
+  	background-color: #ffffff;
+  	border: solid 1px #bbbbbb
+}
+.text {
+	margin-top: 7px;
+  	font-size: 12px;
+  	font-weight: 500;
+  	line-height: 1.58;
+  	color: #333333;
+}
+.text br {
+  line-height: 25px;
+}
+.sub-title {
+  	height: 26px;
+  	font-size: 16px;
+  	font-weight: 600;
+  	line-height: 1.87;
+  	color: #3961b1;
+}
+input[type=radio] {
+	position: relative;
+	width: 0px;
+	margin-top: 12px;
+	margin-bottom: 8px;
+}
+input[type=radio]:after, input[type=radio]:checked:before {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: -9px;
+    content: '';
+    position: absolute;
+}
+input[type=radio]:after {
+    border: 1px solid #bbbbbb;
+}
+input[type=radio]:checked:before {
+    border: 1px solid #3961b1;
+}
+
+input[type=radio]:checked:after {
+    width: 10px;
+    height: 10px;
+    top: 4px;
+    left: -5px;
+    position: absolute;
+    background-color: #3961b1;
+    content: '';
+    border: none;
+    display: inline-block;
+}
+/**********************Note********************/
+/*.select-item: change name
+.red-color -> .red
+.text-small -> .label-category
+.font-large -> .percent-category
+<div className='text' dangerouslySetInnerHTML={ { __html: text } } /> for tag br
+*/
+/*********************End Body of Table*********/
