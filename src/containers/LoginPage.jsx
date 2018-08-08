@@ -8,6 +8,7 @@ import { DATA, COUNTRY } from './../utils/data';
 import './../../node_modules/font-awesome/css/font-awesome.min.css';
 import "./../assets/css/app.css";
 import "./../assets/css/select.css";
+import { getSortedComponent } from "./text";
 
 class LoginPage extends React.Component {
   constructor() {
@@ -15,7 +16,7 @@ class LoginPage extends React.Component {
     this.handlePageChange = this.handlePageChange.bind(this);
     this.updateValue = this.updateValue.bind(this);
     this.updateDate = this.updateDate.bind(this);
-    this.getSortedComponent = this.getSortedComponent.bind(this);
+    // this.getSortedComponent = this.getSortedComponent.bind(this);
     this.onSortedChange = this.onSortedChange.bind(this);
     this.state = {
       activePage: 1,
@@ -25,23 +26,18 @@ class LoginPage extends React.Component {
     this.makeData = DATA;
     this.makeColumns = [
       {
-        Header: (props) => {
-        	const Sorted = this.getSortedComponent(props.column.id);
-		      return (
-		        <span>
-		          {props.column.headerText} {Sorted}
-		        </span>
-		      );
-        },
+        Header: (props) => getSortedComponent(props, this.state.sorted),
         headerStyle: { boxShadow: "none" },
-		headerText: "ID",
+		    headerText: "ID",
         accessor: "id",
         Cell: row => ( <div className="pd-7-5 style-col" >{ row.value }</div> ),
         filterMethod: (filter, row) =>
                   String(row[filter.id]).startsWith(filter.value),
       },
       {
-        Header: "Email",
+        Header: (props) => getSortedComponent(props, this.state.sorted),
+        headerStyle: { boxShadow: "none" },
+        headerText: "Email",
         accessor: "email",
         Cell: row => ( <div className="pd-7-5 style-col" >{ row.value }</div> ),
         filterMethod: (filter, row) =>
@@ -128,14 +124,14 @@ class LoginPage extends React.Component {
     ];
   }
 
-  	getSortedComponent(id) {
-	    let sortInfo = this.state.sorted.filter(item => item.id === id);
-	    if (sortInfo.length) {
-	      if (sortInfo[0].desc === true) return <i className="fa fa-sort-desc" />;
-	      if (sortInfo[0].desc === false) return <i className="fa fa-sort-asc" />;
-	    }
-	    return <i className="fa fa-sort" />;
-	  }
+  	// getSortedComponent(id) {
+	  //   let sortInfo = this.state.sorted.filter(item => item.id === id);
+	  //   if (sortInfo.length) {
+	  //     if (sortInfo[0].desc === true) return <i className="fa fa-sort-desc" />;
+	  //     if (sortInfo[0].desc === false) return <i className="fa fa-sort-asc" />;
+	  //   }
+	  //   return <i className="fa fa-sort" />;
+	  // }
 
 	// genericHeaderArrows(props) {
  //      const Sorted = getSortedComponent(props.column.id);
